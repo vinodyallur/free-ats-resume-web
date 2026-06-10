@@ -1,0 +1,303 @@
+:root {
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --ok: #16a34a;
+  --err: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+a {
+  color: var(--blue);
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 19px;
+  display: grid;
+  place-items: center;
+}
+
+.gh-link {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.gh-link:hover {
+  border-color: var(--blue);
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 30px;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.accent {
+  color: var(--blue);
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 40px 16px;
+  border: 2px dashed var(--line);
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: center;
+  color: var(--muted);
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.drop:hover,
+.drop.dragover {
+  border-color: var(--blue);
+  background: #f1f5ff;
+  color: var(--blue);
+}
+
+.drop-icon {
+  color: var(--blue);
+}
+
+.drop-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.drop.has-file .drop-text {
+  color: var(--blue);
+}
+
+.drop-hint {
+  font-size: 13px;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px 16px;
+  border: 0;
+  border-radius: 11px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--blue-dark);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.status {
+  min-height: 20px;
+  margin: 14px 0 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.status.ok {
+  color: var(--ok);
+}
+
+.status.err {
+  color: var(--err);
+}
+
+.status.busy {
+  color: var(--muted);
+}
+
+.ai-panel {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 4px 12px;
+}
+
+.ai-panel summary {
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--blue);
+  padding: 8px 0;
+  user-select: none;
+}
+
+.ai-body {
+  padding: 4px 0 10px;
+}
+
+.ai-note {
+  margin: 6px 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.ai-input {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+.ai-input:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+.ai-remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 4px 0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.feature {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.feature h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.tips {
+  margin-top: 36px;
+}
+
+.tips h2 {
+  font-size: 18px;
+}
+
+.tips ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
+.tips li {
+  margin: 6px 0;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 22px 20px 40px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.disclaimer {
+  max-width: 620px;
+  margin: 8px auto 0;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 24px;
+  }
+}

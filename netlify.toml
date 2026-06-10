@@ -1,0 +1,15 @@
+# Static site — no build step needed. Netlify just serves these files as-is.
+[build]
+  publish = "."
+
+# Long-cache the vendored libraries (they're versioned and rarely change).
+[[headers]]
+  for = "/lib/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Make it explicit that nothing here needs server-side processing.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"

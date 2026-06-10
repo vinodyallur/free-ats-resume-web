@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free ATS Resume Builder — clean 1-page resume in your browser</title>
+    <meta
+      name="description"
+      content="Free, open-source tool to convert any resume (PDF, DOCX, or TXT) into a clean, 1-page, ATS-friendly DOCX. Runs 100% in your browser — nothing is uploaded."
+    />
+    <link rel="icon" href="icons/icon48.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">A</div>
+        <span>Free ATS Resume Builder</span>
+      </div>
+      <a class="gh-link" href="https://github.com/vinodyallur/free-ats-resume-builder" target="_blank" rel="noopener">
+        GitHub
+      </a>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Make your resume <span class="accent">ATS-friendly</span> in seconds</h1>
+        <p class="sub">
+          Upload any resume and download a clean, single-column, one-page
+          <strong>.docx</strong> that Applicant Tracking Systems can actually read.
+          It runs entirely in your browser — your file never leaves your device.
+        </p>
+      </section>
+
+      <section class="card">
+        <label id="drop" class="drop" for="file">
+          <input id="file" type="file" accept=".pdf,.docx,.txt,.md" hidden />
+          <svg class="drop-icon" viewBox="0 0 24 24" width="40" height="40" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M19 13v5a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-5h2v5h10v-5h2zM11 3h2v8.17l2.59-2.58L17 10l-5 5-5-5 1.41-1.41L11 11.17V3z"
+            />
+          </svg>
+          <span id="dropText" class="drop-text">Click to choose your resume</span>
+          <span class="drop-hint">or drag &amp; drop &middot; PDF, DOCX, or TXT</span>
+        </label>
+
+        <button id="convert" class="btn" disabled>Build ATS resume</button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+
+        <details class="ai-panel">
+          <summary>✨ AI enhance (optional) — sharper, near-perfect output</summary>
+          <div class="ai-body">
+            <p class="ai-note">
+              Paste a <strong>free Google Gemini API key</strong> to let AI rewrite weak
+              bullets and structure your resume perfectly. The key is stored only in this
+              browser and used only for your own request — leave it blank to use the fast
+              offline formatter.
+            </p>
+            <input
+              id="aiKey"
+              class="ai-input"
+              type="password"
+              placeholder="Gemini API key (optional)"
+              autocomplete="off"
+            />
+            <label class="ai-remember">
+              <input id="aiRemember" type="checkbox" checked />
+              Remember this key on this device
+            </label>
+            <p class="ai-note">
+              Get a free key at
+              <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">
+                aistudio.google.com/app/apikey</a
+              >.
+            </p>
+          </div>
+        </details>
+      </section>
+
+      <section class="features">
+        <div class="feature">
+          <h3>🔒 100% private</h3>
+          <p>All processing happens locally in your browser. No upload, no sign-up, no tracking.</p>
+        </div>
+        <div class="feature">
+          <h3>✅ ATS-safe layout</h3>
+          <p>Single column, standard headings, real bullets, common font — no tables or images.</p>
+        </div>
+        <div class="feature">
+          <h3>💸 Free &amp; open source</h3>
+          <p>MIT licensed. Use it, fork it, or self-host it however you like.</p>
+        </div>
+      </section>
+
+      <section class="tips">
+        <h2>Tips for the best result</h2>
+        <ul>
+          <li>After downloading, open in Word or Google Docs, proofread, then export to PDF.</li>
+          <li>Mirror keywords from the job description in your Skills and Experience sections.</li>
+          <li>Keep it to one page — trim the oldest or least-relevant bullets if it overflows.</li>
+          <li>Scanned/image-only PDFs have no selectable text and can't be parsed (no OCR).</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Free ATS Resume Builder &middot; runs entirely in your browser &middot;
+        <a href="https://github.com/vinodyallur/free-ats-resume-builder" target="_blank" rel="noopener">source on GitHub</a>
+      </p>
+      <p class="disclaimer">
+        This tool reformats your existing content. Always review the output before submitting.
+        No ATS score is guaranteed; results vary by system.
+      </p>
+    </footer>
+
+    <script src="lib/fflate.min.js"></script>
+    <script src="lib/pdf.min.js"></script>
+    <script src="src/extract.js"></script>
+    <script src="src/parse.js"></script>
+    <script src="src/llm.js"></script>
+    <script src="src/docx.js"></script>
+    <script src="src/convert.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
