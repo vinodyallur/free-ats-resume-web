@@ -6,8 +6,8 @@ browser** — there is no backend, so you can host it **free** on Netlify, GitHu
 Cloudflare Pages, Vercel, or any static host.
 
 > Sibling projects:
-> [Python CLI/Streamlit](https://github.com/vinodyallur/free-ats-resume-builder) ·
-> Chrome extension (`free-ats-resume-extension`).
+> [Chrome extension](https://github.com/vinodyallur/free-ats-resume-extension) ·
+> [Python CLI/Streamlit](https://github.com/vinodyallur/free-ats-resume-builder).
 
 ---
 
