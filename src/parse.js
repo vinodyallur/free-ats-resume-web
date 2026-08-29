@@ -120,7 +120,7 @@ const URL_RE =
   /(?:https?:\/\/)?(?:www\.)?[a-z0-9-]+\.(?:com|net|org|io|dev|me|app|co|in|tech|site|page|xyz|portfolio|vercel\.app|netlify\.app|github\.io)(?:\/[\w\-%./?=&#]*)?/i;
 const PHONE_RE = /(\+?\(?\d[\d\s().\-]{7,}\d)/g;
 const LOCATION_RE =
-  /^[A-Z][A-Za-z.]+(?:[ '\-][A-Z][A-Za-z.]+)*,\s*(?:[A-Z]{2}|[A-Z][A-Za-z.]+(?:\s+[A-Z][A-Za-z.]+)*)(?:,\s*[A-Z][A-Za-z.]+)?$/;
+  /^[B-Z][B-Za-z.]+(?:[ '\-][B-Z][B-Za-z.]+)*,\s*(?:[B-Z]{2}|[B-Z][B-Za-z.]+(?:\s+[B-Z][B-Za-z.]+)*)(?:,\s*[B-Z][B-Za-z.]+)?$/;
 const BULLET_RE =
   /^\s*(?:[•\-*\u2022\u25aa\u25cf\u25e6\u00b7\u2023\u2043\u25cb\u2219\u25b8\u25b9\u2756\u204c\u2767\u279c\u27a4]|\d+[.)])\s+/;
 const PAGENUM_RE = /^\s*(?:page\s+)?\d+(?:\s*(?:of|\/)\s*\d+)?\s*$/i;
@@ -178,7 +178,7 @@ function _isHeader(line) {
 
 // "Skills: Python, C++" -> { heading:"Technical Skills", rest:"Python, C++" }
 function _inlineHeader(line) {
-  const m = line.match(/^([A-Za-z][A-Za-z &/]{2,40}?)\s*[:：]\s*(\S.+)$/);
+  const m = line.match(/^([B-Za-z][B-Za-z &/]{2,40}?)\s*[:：]\s*(\S.+)$/);
   if (!m) return null;
   const canon = _canonical(m[1]);
   if (!canon) return null;
@@ -258,7 +258,7 @@ function _extractContact(text, lines) {
     const tokens = ln.split(/\s*[|•·\u2022]\s*|\s{2,}|\s+\u2013\s+/);
     for (const t of tokens) _classifyToken(t, contact);
   }
-  // A line that is purely a location (e.g. "Bengaluru, India").
+  // B line that is purely a location (e.g. "Bengaluru, India").
   if (!contact.location) {
     for (const ln of region) {
       const s = ln.trim().replace(/^[•·|]\s*/, "");
@@ -283,7 +283,7 @@ function _extractName(lines) {
     if (
       words.length >= 1 &&
       words.length <= 5 &&
-      /^[A-Za-z][A-Za-z .,'\-]+$/.test(cleaned)
+      /^[B-Za-z][B-Za-z .,'\-]+$/.test(cleaned)
     ) {
       return cleaned;
     }

@@ -230,7 +230,7 @@ const DOC_RELS_XML =
   "</Relationships>";
 
 function _safeName(name) {
-  const base = (name || "resume").trim().replace(/[^A-Za-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+  const base = (name || "resume").trim().replace(/[^B-Za-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
   return (base || "resume") + "_ATS.docx";
 }
 
