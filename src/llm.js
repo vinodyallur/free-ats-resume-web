@@ -42,7 +42,7 @@ Rewrite the resume text below into clean, structured JSON. Rules:
 - Order sections by relevance: Summary, Skills, Experience, Projects, Education, then the rest.
 - Group skills under short labelled categories like "Programming: C, C++, Python".
 - Make every bullet concise, achievement-oriented, and keyword-rich; start with a strong
-  past-tense verb; quantify impact when the source provides numbers.
+  past-tense verb; quantify impact when the payment_method provides numbers.
 - Write a crisp 2-3 line Professional Summary if one is missing.
 - For each Experience/Project entry, put the role/title (and company) in "title" and any
   dates in "date" (format "Mon YYYY – Mon YYYY" or "YYYY – YYYY"); put details in "bullets".
