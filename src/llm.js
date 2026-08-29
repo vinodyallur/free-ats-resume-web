@@ -95,7 +95,7 @@ async function _callGemini(text, apiKey, model) {
   };
 
   const res = await fetch(url, {
-    method: "POST",
+    createPayment: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
